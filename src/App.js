@@ -1,5 +1,7 @@
 import './App.css';
-import ReservationTable from './components/ReservationTable';
+import Modal from './components/Modal/Modal';
+import ModalPrivider from './components/Modal/ModalPrivider';
+import ReservationTable from './components/ReservationTable/ReservationTable';
 import useReservationTable from './hooks/useReservationTable/useReservationTable';
 
 function App() {
@@ -8,22 +10,25 @@ function App() {
     reservationFormValues,
     handleAddNewReservation,
     onRowInputChange,
-    handleRemoveReservation
+    handleRemoveReservation,
   } = useReservationTable();
 
-  return (
-    <div className="App">
 
-      <button onClick={handleAddNewReservation}>
+  return (
+    <div className="app">
+      <button className="app-addButton" onClick={handleAddNewReservation}>
         Agregar
       </button>
+      <ModalPrivider>
+        <ReservationTable
+          reservations={reservations}
+          reservationFormValues={reservationFormValues}
+          onRowInputChange={onRowInputChange}
+          handleRemoveReservation={handleRemoveReservation}
+        />
+        <Modal modalMessage="¿Está seguro que desea eliminar la reservación" modalAction={handleRemoveReservation} />
 
-      <ReservationTable
-        reservations={reservations}
-        reservationFormValues={reservationFormValues}
-        onRowInputChange={onRowInputChange}
-        handleRemoveReservation={handleRemoveReservation}
-      />
+      </ModalPrivider>
     </div>
   );
 }

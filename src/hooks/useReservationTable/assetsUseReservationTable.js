@@ -24,5 +24,6 @@ export const reducer = (state, action) => {
 
 export const initialState = {
   reservations: reservationsData,
-  reservationFormValues: reservationFormValuesInitialState
+  reservationFormValues: reservationFormValuesInitialState,
+  isModalShowing: false
 };

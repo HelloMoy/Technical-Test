@@ -1,0 +1,42 @@
+.reservationTable {
+  border: var(--standard-border);
+  padding: var(--standard-padding);
+  border-radius: var(--standard-border-radius);
+  color: var(--gray-color);
+}
+
+.reservationTable__tableHead {
+  border: var(--standard-border);
+  padding: var(--standard-padding);
+  border-radius: var(--standard-border-radius);
+  color: var(--gray-color);
+  font-size: var(--table-header-font-size);
+  line-height: var(--table-header-font-size);
+}
+
+.reservationTable__footerInput {
+  border: var(--standard-border);
+  padding: calc(var(--standard-padding) / 2);
+  border-radius: var(--standard-border-radius);
+  color: var(--gray-color);
+}
+
+.reservationRow__tableData__deleteButton {
+  display: flex;
+  justify-content: center;
+}
+
+.reservationRow__deleteButton {
+  border: var(--standard-border);
+  padding: calc(var(--standard-padding) / 2);
+  border-radius: var(--standard-border-radius);
+  background: none;
+  color: var(--gray-color);
+  text-align: center;
+  cursor: pointer;
+}
+
+.reservationRow__deleteButton:hover {
+  color: var(--white-color);
+  background-color: var(--gray-color);
+}
